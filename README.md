@@ -17,6 +17,12 @@ raster scheduler, and three-SID music system.
 - A deterministic raster IRQ and effect scheduler designed for a full
   multi-minute loop rather than an isolated screen.
 
+## Runtime capture
+
+The following frame was captured while the built PRG was running in VICE.
+
+![Berlin 3SID megademo running in VICE](docs/screenshots/runtime.png)
+
 ## Build
 
 Requirements:
@@ -56,4 +62,3 @@ The supplied manifest and build are also used by the release workflow.
 - [V6_0_0_NOTES.md](V6_0_0_NOTES.md) records the musical arrangement.
 - [docs/LINEAGE.md](docs/LINEAGE.md) documents the archive/source naming
   mismatch and why this repository is categorized by implementation identity.
-
