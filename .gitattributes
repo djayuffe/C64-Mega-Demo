@@ -1,0 +1,12 @@
+# Preserve deterministic source and documentation line endings.
+*.s text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.txt text eol=lf
+
+# C64 programs and visual assets are binary data.
+*.prg binary
+*.png binary
+*.bin binary

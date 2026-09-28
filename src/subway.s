@@ -1,5 +1,7 @@
 ; ============================================================================
 ;  U83R RUL3Z - 3SID TIMING-LOCKED MEGADEMO   (C64 / ACME)
+;  Copyright (C) 2026 Ulf Bertilsson
+;  SPDX-License-Identifier: GPL-3.0-or-later
 ; ----------------------------------------------------------------------------
 ;  Full sequenced production with 3SID audio: bass, melody and dedicated drums
 ;  score and wipe + title-card transitions:
@@ -5554,7 +5556,9 @@ nw_update:
         and #$0f
         tax
         lda NfxCoolPalette,x
+        sta BORDER
         lda #$00
+        sta BKG
         ; clear active rows only, keep row 24 for scroller
         ldx #3
 .nw_clear_row:
@@ -5652,6 +5656,7 @@ ic_update:
         adc sndPulse
         and #$07
         ora #$08
+        sta scrollReg
         lda ic_phase
         lsr
         clc
@@ -5659,7 +5664,9 @@ ic_update:
         and #$0f
         tax
         lda NfxCorridorBg,x
+        sta BKG
         lda NfxCorridorBorder,x
+        sta BORDER
 .ic_row_loop:
         ldx ic_row_temp
         lda ScrRowLo,x
@@ -5730,7 +5737,9 @@ gt_update:
         and #$07
         tax
         lda NfxGoldBorder,x
+        sta BORDER
         lda #$00
+        sta BKG
 .gt_row_loop:
         ldx gt_row_temp
         lda ScrRowLo,x
