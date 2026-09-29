@@ -25,6 +25,15 @@
 
 !cpu 6502
 
+; Optional assembler-time scene selector for deterministic visual review.
+; The release build starts at part 0; `acme -DSTART_PART=n` may select 0..27.
+!ifndef START_PART {
+START_PART = 0
+}
+!if START_PART > 27 {
+        !error "START_PART must be in the range 0..27"
+}
+
 ; ------- BASIC stub: 10 SYS 2061 -------
 * = $0801
         !word stub_end, 10
@@ -187,8 +196,9 @@ MegaMain:
         jsr TV_MusInit
         jsr SeedRand
 
-        ; Start on part 0 (title), no preceding card.
-        lda #0
+        ; Start on the release opener, or a deterministic assembler-selected
+        ; scene when creating a visual-review build.
+        lda #START_PART
         sta partId
         sta demoState           ; 0 = RUN
         jsr InitPart

@@ -56,6 +56,8 @@ for required in (
     "ThreeSIDEffectPolish:",
     "!if * > $c000",
     "!text \"2061\"",
+    "START_PART = 0",
+    "lda #START_PART",
     "WireCubeChars:   !binary \"wire_cube_chars.bin\"",
     "WireCubeMask:    !binary \"wire_cube_mask.bin\"",
 ):

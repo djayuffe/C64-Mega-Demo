@@ -30,6 +30,19 @@ x64sc -sidextra 2 -sid2address 0xd420 -sid3address 0xd440 \
 The visual program will run with a one-SID configuration, but the intended
 score requires the three-chip layout.
 
+For a deterministic visual-review build, select any scene index from 0 through
+27 at assembly time (the normal release always uses index 0):
+
+```sh
+cd src && acme -DSTART_PART=23 -f cbm -o ../build/review.prg subway.s
+```
+
+To regenerate the complete VICE gallery (requires `x64sc`), run:
+
+```sh
+./tools/capture_effects.sh
+```
+
 ## Invariants
 
 - `NUM_PARTS`, both dispatch tables, and all timing tables must contain 28

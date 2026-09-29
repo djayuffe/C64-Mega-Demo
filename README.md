@@ -62,6 +62,9 @@ routines are dormant rather than visible runtime features.
 See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for the source map and 3SID
 setup, and [docs/AUDIT.md](docs/AUDIT.md) for the release checks.
 
+The complete 28-scene screenshot gallery and effect descriptions are in
+[docs/EFFECTS.md](docs/EFFECTS.md).
+
 ## License
 
 Copyright © 2026 Ulf Bertilsson. Licensed under
